@@ -1,0 +1,38 @@
+.navbar {
+    background-color: $primary-color;
+    @include box-shadow($shadow-base);
+}
+
+.navbar-brand {
+    color: $white !important;
+    font-weight: 600;
+}
+
+.navbar-nav .nav-link {
+    color: rgba($white, 0.8) !important;
+    @include transition(color);
+}
+
+.navbar-nav .nav-link:hover {
+    color: $white !important;
+}
+
+.btn-primary {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+    @include transition(background-color);
+}
+
+.btn-primary:hover {
+    background-color: darken($secondary-color, 10%);
+    border-color: darken($secondary-color, 10%);
+}
+
+.btn-danger {
+    background-color: $accent-color;
+    border-color: $accent-color;
+}
+
+.card {
+    @include card-style;
+}

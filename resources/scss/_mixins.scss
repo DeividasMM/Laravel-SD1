@@ -1,0 +1,23 @@
+@mixin box-shadow($shadow) {
+    box-shadow: $shadow;
+}
+
+@mixin border-radius($radius) {
+    border-radius: $radius;
+}
+
+@mixin transition($property: all, $duration: 0.3s, $timing: ease) {
+    transition: $property $duration $timing;
+}
+
+@mixin flex-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+@mixin card-style {
+    border: none;
+    @include box-shadow($shadow-md);
+    @include border-radius($border-radius-base);
+}
