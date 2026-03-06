@@ -18,7 +18,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item">
-                        <span class="nav-link">John Doe</span>
+                        <span class="nav-link">Deividas Petraitis</span>
                     </li>
                     <li class="nav-item">
                         <button class="btn btn-outline-light btn-sm ms-2" disabled>Logout</button>
@@ -31,12 +31,6 @@
     <main class="container">
         @yield('content')
     </main>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            console.log('Conference System loaded');
-        });
-    </script>
 </body>
 
 </html>
