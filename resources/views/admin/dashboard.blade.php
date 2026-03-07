@@ -27,7 +27,7 @@
                     <div class="card-body d-flex flex-column text-center">
                         <h5 class="card-title">Conference Management</h5>
                         <p class="card-text">Create, edit and delete conferences</p>
-                        <a href="#" class="btn btn-primary mt-auto disabled">Manage Conferences</a>
+                        <a href="{{ route('admin.conferences') }}" class="btn btn-primary mt-auto">Manage Conferences</a>
                     </div>
                 </div>
             </div>
