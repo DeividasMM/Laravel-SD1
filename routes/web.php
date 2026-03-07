@@ -5,6 +5,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\Admin\ConferenceController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
@@ -19,3 +20,7 @@ Route::get('/admin', [UserController::class, 'dashboard'])->name('admin.dashboar
 Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users');
 Route::get('/admin/users/edit/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
 Route::post('/admin/users/update/{id}', [UserController::class, 'update'])->name('admin.users.update');
+
+Route::get('/admin/conferences', [ConferenceController::class, 'index'])->name('admin.conferences');
+Route::get('/admin/conferences/create', [ConferenceController::class, 'create'])->name('admin.conferences.create');
+Route::post('/admin/conferences/store', [ConferenceController::class, 'store'])->name('admin.conferences.store');
