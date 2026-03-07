@@ -15,6 +15,12 @@
                 </div>
                 @endif
 
+                @if(session('error'))
+                <div class="alert alert-danger">
+                    {{ session('error') }}
+                </div>
+                @endif
+
                 <div class="mb-3">
                     <a href="{{ route('admin.conferences.create') }}" class="btn btn-success">Create New Conference</a>
                 </div>
@@ -38,11 +44,15 @@
                                 <td>{{ $conference['time'] }}</td>
                                 <td>{{ $conference['address'] }}</td>
                                 <td>
-                                    <a href="#" class="btn btn-primary btn-sm">Edit</a>
-                                    <form method="POST" action="#" style="display: inline;">
+                                    <a href="{{ route('admin.conferences.edit', $conference['id']) }}" class="btn btn-primary btn-sm">Edit</a>
+                                    @if(strtotime($conference['date']) >= strtotime(date('Y-m-d')))
+                                    <form method="POST" action="{{ route('admin.conferences.delete', $conference['id']) }}" style="display: inline;">
                                         @csrf
-                                        <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this conference?')">Delete</button>
                                     </form>
+                                    @else
+                                    <button class="btn btn-danger btn-sm" disabled>Delete</button>
+                                    @endif
                                 </td>
                             </tr>
                             @endforeach

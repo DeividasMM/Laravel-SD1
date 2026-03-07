@@ -24,3 +24,6 @@ Route::post('/admin/users/update/{id}', [UserController::class, 'update'])->name
 Route::get('/admin/conferences', [ConferenceController::class, 'index'])->name('admin.conferences');
 Route::get('/admin/conferences/create', [ConferenceController::class, 'create'])->name('admin.conferences.create');
 Route::post('/admin/conferences/store', [ConferenceController::class, 'store'])->name('admin.conferences.store');
+Route::get('/admin/conferences/edit/{id}', [ConferenceController::class, 'edit'])->name('admin.conferences.edit');
+Route::post('/admin/conferences/update/{id}', [ConferenceController::class, 'update'])->name('admin.conferences.update');
+Route::post('/admin/conferences/delete/{id}', [ConferenceController::class, 'delete'])->name('admin.conferences.delete');
