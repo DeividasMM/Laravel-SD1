@@ -11,7 +11,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="/">Conference System</a>
+            <a class="navbar-brand" href="/">{{ __('app.system_name') }}</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -21,7 +21,7 @@
                         <span class="nav-link">Deividas Petraitis</span>
                     </li>
                     <li class="nav-item">
-                        <button class="btn btn-outline-light btn-sm ms-2" disabled>Logout</button>
+                        <button class="btn btn-outline-light btn-sm ms-2" disabled>{{ __('app.logout') }}</button>
                     </li>
                 </ul>
             </div>

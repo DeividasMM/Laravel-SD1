@@ -1,0 +1,26 @@
+<?php
+
+return [
+    'conferences' => 'Konferencijos',
+    'conference_list' => 'Konferencijų Sąrašas',
+    'conference_details' => 'Konferencijos Informacija',
+    'title' => 'Pavadinimas',
+    'description' => 'Aprašymas',
+    'date' => 'Data',
+    'time' => 'Laikas',
+    'address' => 'Adresas',
+    'lecturers' => 'Lektoriai',
+    'view' => 'Peržiūrėti',
+    'register' => 'Registruotis',
+    'registration' => 'Registracija',
+    'register_for_conference' => 'Registruotis į Konferenciją',
+    'name' => 'Vardas',
+    'email' => 'El. paštas',
+    'phone' => 'Telefonas',
+    'back_to_list' => 'Atgal į Sąrašą',
+    'close' => 'Uždaryti',
+    'registration_successful' => 'Registracija sėkminga!',
+    'confirm_register' => 'Registruotis į konferenciją?',
+    'confirm_register_text' => 'Ar tikrai norite registruotis į šią konferenciją?',
+    'yes_register' => 'Taip, registruotis',
+];

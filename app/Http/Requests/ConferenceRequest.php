@@ -22,4 +22,16 @@ class ConferenceRequest extends FormRequest
             'lecturers' => 'required'
         ];
     }
+
+    public function messages()
+    {
+        return [
+            'title.required' => 'Pavadinimas yra privalomas',
+            'description.required' => 'Aprašymas yra privalomas',
+            'date.required' => 'Data yra privaloma',
+            'time.required' => 'Laikas yra privalomas',
+            'address.required' => 'Adresas yra privalomas',
+            'lecturers.required' => 'Lektoriai yra privalomi'
+        ];
+    }
 }
