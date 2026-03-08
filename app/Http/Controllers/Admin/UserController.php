@@ -19,31 +19,31 @@ class UserController extends Controller
                 'id' => 1,
                 'name' => 'Jonas',
                 'surname' => 'Petrauskas',
-                'email' => 'jonas.p@example.com'
+                'email' => 'jonas.petrauskas@gmail.com'
             ],
             [
                 'id' => 2,
-                'name' => 'Anna',
-                'surname' => 'Kovalenko',
-                'email' => 'anna.k@example.com'
+                'name' => 'Ona',
+                'surname' => 'Kazlauskienė',
+                'email' => 'ona.kazlauskiene@gmail.com'
             ],
             [
                 'id' => 3,
                 'name' => 'Tomas',
                 'surname' => 'Vasiliauskas',
-                'email' => 'tomas.v@example.com'
+                'email' => 'tomas.vasiliauskas@gmail.com'
             ],
             [
                 'id' => 4,
                 'name' => 'Elena',
-                'surname' => 'Butkus',
-                'email' => 'elena.b@example.com'
+                'surname' => 'Butkienė',
+                'email' => 'elena.butkiene@gmail.com'
             ],
             [
                 'id' => 5,
                 'name' => 'Petras',
                 'surname' => 'Jankauskas',
-                'email' => 'petras.j@example.com'
+                'email' => 'petras.jankauskas@gmail.com'
             ]
         ];
 
@@ -57,31 +57,31 @@ class UserController extends Controller
                 'id' => 1,
                 'name' => 'Jonas',
                 'surname' => 'Petrauskas',
-                'email' => 'jonas.p@example.com'
+                'email' => 'jonas.petrauskas@gmail.com'
             ],
             2 => [
                 'id' => 2,
-                'name' => 'Anna',
-                'surname' => 'Kovalenko',
-                'email' => 'anna.k@example.com'
+                'name' => 'Ona',
+                'surname' => 'Kazlauskienė',
+                'email' => 'ona.kazlauskiene@gmail.com'
             ],
             3 => [
                 'id' => 3,
                 'name' => 'Tomas',
                 'surname' => 'Vasiliauskas',
-                'email' => 'tomas.v@example.com'
+                'email' => 'tomas.vasiliauskas@gmail.com'
             ],
             4 => [
                 'id' => 4,
                 'name' => 'Elena',
-                'surname' => 'Butkus',
-                'email' => 'elena.b@example.com'
+                'surname' => 'Butkienė',
+                'email' => 'elena.butkiene@gmail.com'
             ],
             5 => [
                 'id' => 5,
                 'name' => 'Petras',
                 'surname' => 'Jankauskas',
-                'email' => 'petras.j@example.com'
+                'email' => 'petras.jankauskas@gmail.com'
             ]
         ];
 
@@ -102,6 +102,6 @@ class UserController extends Controller
             'email' => 'required|email'
         ]);
 
-        return redirect()->route('admin.users')->with('success', 'User updated successfully!');
+        return redirect()->route('admin.users')->with('success', __('admin.user_updated'));
     }
 }
