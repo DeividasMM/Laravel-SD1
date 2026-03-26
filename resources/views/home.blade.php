@@ -12,7 +12,7 @@
                     <h4>{{ __('home.student_info') }}</h4>
                     <p class="mb-1"><strong>{{ __('home.name') }}:</strong> Deividas</p>
                     <p class="mb-1"><strong>{{ __('home.surname') }}:</strong> Petraitis</p>
-                    <p class="mb-0"><strong>{{ __('home.group') }}:</strong> IFF-2/1</p>
+                    <p class="mb-0"><strong>{{ __('home.group') }}:</strong> PIT-23-NL</p>
                 </div>
             </div>
         </div>
