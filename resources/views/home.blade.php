@@ -10,8 +10,13 @@
                 <h1 class="mb-4">{{ __('home.welcome') }}</h1>
                 <div class="student-info mb-4">
                     <h4>{{ __('home.student_info') }}</h4>
+                    @auth
+                    <p class="mb-1"><strong>{{ __('home.name') }}:</strong> {{ auth()->user()->name }}</p>
+                    <p class="mb-1"><strong>{{ __('home.surname') }}:</strong> {{ auth()->user()->surname }}</p>
+                    @else
                     <p class="mb-1"><strong>{{ __('home.name') }}:</strong> Deividas</p>
                     <p class="mb-1"><strong>{{ __('home.surname') }}:</strong> Petraitis</p>
+                    @endauth
                     <p class="mb-0"><strong>{{ __('home.group') }}:</strong> PIT-23-NL</p>
                 </div>
             </div>

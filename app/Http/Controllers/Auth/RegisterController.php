@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class RegisterController extends Controller
@@ -33,6 +34,8 @@ class RegisterController extends Controller
 
         $clientRole = Role::where('name', 'client')->first();
         $user->roles()->attach($clientRole->id);
+
+        Auth::login($user);
 
         return redirect('/')->with('success', __('auth.registered'));
     }
