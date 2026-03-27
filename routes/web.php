@@ -6,6 +6,10 @@ use App\Http\Controllers\ClientController;
 use App\Http\Controllers\EmployeeController;
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\ConferenceController;
+use App\Http\Controllers\Auth\RegisterController;
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
