@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Conference;
+use App\Models\User;
 use Illuminate\Database\Seeder;
 
 class ConferenceSeeder extends Seeder
@@ -44,5 +45,14 @@ class ConferenceSeeder extends Seeder
             'address' => 'Vilnius, Konstitucijos pr. 7',
             'lecturers' => 'Dr. Marius Marčiukaitis',
         ]);
+
+        $client = User::where('email', 'client@example.com')->first();
+
+        if ($client) {
+            $conferences = Conference::all();
+            foreach ($conferences as $conference) {
+                $conference->users()->attach($client->id);
+            }
+        }
     }
 }
