@@ -45,7 +45,7 @@
                     <hr>
                 </div>
 
-                @if(count($registeredClients) > 0)
+                @if(count($conference['registered_clients']) > 0)
                 <div class="table-responsive">
                     <table class="table table-striped">
                         <thead>
@@ -55,10 +55,10 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($registeredClients as $client)
+                            @foreach($conference['registered_clients'] as $client)
                             <tr>
-                                <td>{{ $client->name }} {{ $client->surname }}</td>
-                                <td>{{ $client->email }}</td>
+                                <td>{{ $client['name'] }}</td>
+                                <td>{{ $client['email'] }}</td>
                             </tr>
                             @endforeach
                         </tbody>
