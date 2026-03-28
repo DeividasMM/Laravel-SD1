@@ -27,7 +27,17 @@ class ClientController extends Controller
 
     public function register(Request $request)
     {
-        $conferenceId = $request->input('conference_id');
+        $conference = Conference::find($request->input('conference_id'));
+
+        if (!$conference) {
+            abort(404);
+        }
+
+        if (auth()->user()->conferences()->where('conference_id', $conference->id)->exists()) {
+            return redirect()->route('client.conferences')->with('error', __('client.already_registered'));
+        }
+
+        auth()->user()->conferences()->attach($conference->id);
 
         return redirect()->route('client.conferences')->with('success', __('client.registration_successful'));
     }

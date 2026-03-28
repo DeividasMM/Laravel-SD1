@@ -16,23 +16,31 @@ Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::middleware(['auth'])->group(function () {
+    Route::get('/', [HomeController::class, 'index'])->name('home');
+});
 
-Route::get('/client/conferences', [ClientController::class, 'index'])->name('client.conferences');
-Route::get('/client/conference/{id}', [ClientController::class, 'show'])->name('client.conference.show');
-Route::post('/client/register', [ClientController::class, 'register'])->name('client.register');
+Route::middleware(['auth', 'role:client'])->group(function () {
+    Route::get('/client/conferences', [ClientController::class, 'index'])->name('client.conferences');
+    Route::get('/client/conference/{id}', [ClientController::class, 'show'])->name('client.conference.show');
+    Route::post('/client/register', [ClientController::class, 'register'])->name('client.register');
+});
 
-Route::get('/employee/conferences', [EmployeeController::class, 'index'])->name('employee.conferences');
-Route::get('/employee/conference/{id}', [EmployeeController::class, 'show'])->name('employee.conference.show');
+Route::middleware(['auth', 'role:employee'])->group(function () {
+    Route::get('/employee/conferences', [EmployeeController::class, 'index'])->name('employee.conferences');
+    Route::get('/employee/conference/{id}', [EmployeeController::class, 'show'])->name('employee.conference.show');
+});
 
-Route::get('/admin', [UserController::class, 'dashboard'])->name('admin.dashboard');
-Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users');
-Route::get('/admin/users/edit/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
-Route::post('/admin/users/update/{id}', [UserController::class, 'update'])->name('admin.users.update');
+Route::middleware(['auth', 'role:admin'])->group(function () {
+    Route::get('/admin', [UserController::class, 'dashboard'])->name('admin.dashboard');
+    Route::get('/admin/users', [UserController::class, 'index'])->name('admin.users');
+    Route::get('/admin/users/edit/{id}', [UserController::class, 'edit'])->name('admin.users.edit');
+    Route::post('/admin/users/update/{id}', [UserController::class, 'update'])->name('admin.users.update');
 
-Route::get('/admin/conferences', [ConferenceController::class, 'index'])->name('admin.conferences');
-Route::get('/admin/conferences/create', [ConferenceController::class, 'create'])->name('admin.conferences.create');
-Route::post('/admin/conferences/store', [ConferenceController::class, 'store'])->name('admin.conferences.store');
-Route::get('/admin/conferences/edit/{id}', [ConferenceController::class, 'edit'])->name('admin.conferences.edit');
-Route::post('/admin/conferences/update/{id}', [ConferenceController::class, 'update'])->name('admin.conferences.update');
-Route::post('/admin/conferences/delete/{id}', [ConferenceController::class, 'delete'])->name('admin.conferences.delete');
+    Route::get('/admin/conferences', [ConferenceController::class, 'index'])->name('admin.conferences');
+    Route::get('/admin/conferences/create', [ConferenceController::class, 'create'])->name('admin.conferences.create');
+    Route::post('/admin/conferences/store', [ConferenceController::class, 'store'])->name('admin.conferences.store');
+    Route::get('/admin/conferences/edit/{id}', [ConferenceController::class, 'edit'])->name('admin.conferences.edit');
+    Route::post('/admin/conferences/update/{id}', [ConferenceController::class, 'update'])->name('admin.conferences.update');
+    Route::post('/admin/conferences/delete/{id}', [ConferenceController::class, 'delete'])->name('admin.conferences.delete');
+});
