@@ -45,6 +45,11 @@
     window.successMessage = "{{ session('success') }}";
 </script>
 @endif
+@if(session('error'))
+<script>
+    window.errorMessage = "{{ session('error') }}";
+</script>
+@endif
 <script>
     window.clientTranslations = {
         confirmRegister: "{{ __('client.confirm_register') }}",
@@ -60,6 +65,14 @@
                 title: window.successMessage,
                 showConfirmButton: false,
                 timer: 3000
+            });
+        }
+
+        if (window.errorMessage) {
+            Swal.fire({
+                icon: 'error',
+                title: window.errorMessage,
+                showConfirmButton: true
             });
         }
 

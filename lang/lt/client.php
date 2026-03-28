@@ -23,4 +23,5 @@ return [
     'confirm_register' => 'Registruotis į konferenciją?',
     'confirm_register_text' => 'Ar tikrai norite registruotis į šią konferenciją?',
     'yes_register' => 'Taip, registruotis',
+    'already_registered' => 'Jūs jau esate užsiregistravęs į šią konferenciją.',
 ];

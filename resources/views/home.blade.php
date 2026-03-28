@@ -26,6 +26,7 @@
             <div class="card-body">
                 <h4 class="card-title mb-4">{{ __('home.subsystems') }}</h4>
                 <div class="row g-3">
+                    @if(auth()->user()->hasRole('client'))
                     <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body d-flex flex-column text-center">
@@ -35,6 +36,8 @@
                             </div>
                         </div>
                     </div>
+                    @endif
+                    @if(auth()->user()->hasRole('employee'))
                     <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body d-flex flex-column text-center">
@@ -44,6 +47,8 @@
                             </div>
                         </div>
                     </div>
+                    @endif
+                    @if(auth()->user()->hasRole('admin'))
                     <div class="col-md-4">
                         <div class="card h-100">
                             <div class="card-body d-flex flex-column text-center">
@@ -53,6 +58,7 @@
                             </div>
                         </div>
                     </div>
+                    @endif
                 </div>
             </div>
         </div>
